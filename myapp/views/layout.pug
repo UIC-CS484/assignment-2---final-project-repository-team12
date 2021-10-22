@@ -1,7 +1,20 @@
 doctype html
-html
-  head
-    title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body
-    block content
+html.h-100
+    head
+        block head
+            block title
+                title NASA IMAGE FINDER
+            block meta
+                meta(name='viewport', content='width=device-width, initial-scale=1')
+                meta(name='description', content='')
+                meta(name='keywords', content='')
+            link(rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous") 
+            link(rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css")
+            link(href='/css/style.css', rel='stylesheet')
+    body.d-flex.flex-column.h-100
+
+        block content
+        link(href='/css/style.css', rel='stylesheet')
+        include footer
+        link(href='/css/style.css', rel='stylesheet')
+        
