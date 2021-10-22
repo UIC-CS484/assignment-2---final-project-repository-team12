@@ -9,7 +9,7 @@ block content
     .Absolute-Center.is-Responsive
       #logo-container
       .col-sm-12.col-md-10.col-md-offset-1
-        form#loginForm(action='')
+        form#loginForm(action='/', method="POST")
           .form-group.input-group
             span.input-group-addon
               i.glyphicon.glyphicon-user
@@ -19,9 +19,12 @@ block content
               i.glyphicon.glyphicon-lock
             input.form-control(type='password' name='password' placeholder='password') 
           .form-group
-            button.btn.btn-def.btn-block(type='button') Login
+            button.btn.btn-def.btn-block(type='submit') Login
+            <% if(messages.error) { %>
+              <%= messages.error %>
+              <% } %>
           .form-group.text-center.text-inline
-            a(href="/login") Create an Account
+            a(href="/register") Create an Account
             | &nbsp;|&nbsp;
             a(href='#') Forgot Password
             | &nbsp;|&nbsp;
