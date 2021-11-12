@@ -117,3 +117,29 @@ body.active .wrapper .section{
     margin-left: 0;
     width: 100%;
 }
+
+.wrapper .sidebar ul li .button button{
+    font-family: 'Open Sans', sans-serif;
+    background-image: none;
+    background-color: transparent;
+    background-repeat: no-repeat;
+    border: none;
+    cursor: pointer;
+    overflow: hidden;
+    outline: none;
+    display: block;
+    padding: 13px 5px;
+    border-bottom: 1px solid #10558d;
+    color: rgb(241, 237, 237);
+    font-size: 16px;
+    position: relative;
+}
+
+
+.wrapper .sidebar ul li a:hover .button button,
+.wrapper .sidebar ul li a.active .button button{
+    color: #0c7db1;
+
+    background:white;
+    border-right: 2px solid rgb(5, 68, 104);
+}

@@ -47,11 +47,12 @@ head
             i.fas.fa-cog
           span.item Settings
       li
-        form(action="/logout?_method=DELETE"  method="POST")
-          a(href="/")
-            span.icon
-              i.fas.fa-power-off
-            span.item Logout
+        .button
+          form(action="/logout?_method=DELETE"  method="POST")
+            button.btn.btn-def.btn-block(type='submit')
+              span.icon
+                i.fas.fa-power-off
+              span.item  Logout
   .section
     .top_navbar
       .hamburger
@@ -73,7 +74,7 @@ block content
     .Absolute-Center.is-Responsive
       #logo-container
       .col-sm-12.col-md-10.col-md-offset-1
-        form(action="/logout?_method=DELETE"  method="POST")
+        //form(action="/logout?_method=DELETE"  method="POST")
             button.btn.btn-def.btn-block(type='submit') Logout
 
 

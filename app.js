@@ -104,6 +104,28 @@ app.delete('/logout', (req, res) => {
   res.redirect('/')
 })
 
+
+app.get('/imagefinder', checkNotAuthenticated, (req, res) => {
+  res.render('imagefinder', { title: 'image finder page'})
+  res.redirect('/imagefinder')
+})
+
+
+app.get('/pod', checkNotAuthenticated, (req, res) => {
+  res.render('pod', { title: 'picture of the page'})
+  res.redirect('/pod')
+})
+
+app.get('/neof', checkNotAuthenticated, (req, res) => {
+  res.render('neof', { title: 'near earth object finder page'})
+  res.redirect('/neof')
+})
+
+app.get('/settings', checkNotAuthenticated, (req, res) => {
+  res.render('settings', { title: 'settings page'})
+  res.redirect('/settings')
+})
+
 function checkAuthenticated(req, res, next)
 {
   if(req.isAuthenticated())
