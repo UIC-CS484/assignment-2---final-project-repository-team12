@@ -43,4 +43,7 @@ Testing-tools: jest
 Authentication: Passport.js
 
 
+## ERD Diagram
+
+<img  src="er.jpg" >
 
