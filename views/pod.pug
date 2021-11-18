@@ -1,1 +1,97 @@
-extends main
+doctype html
+head
+  link(rel='stylesheet' href='https://use.fontawesome.com/releases/v5.8.1/css/all.css')
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  title Home
+  link(href='/css/pod.css', rel='stylesheet')
+  style.
+.wrapper
+  // Top menu
+  .sidebar
+    // profile image & text
+    // menu item
+    .profile
+      img(src='../images/nif2.png')
+
+    ul
+      li
+        a.active(href='/main')
+          span.icon
+            i.fas.fa-home
+          span.item Home
+      li
+        a(href='/imagefinder')
+          span.icon
+            i.fas.fa-desktop
+          span.item Image Finder
+      li
+        a(href='/pod')
+          span.icon
+            i.fas.fa-user-friends
+          span.item Picture of the Day
+      li
+        a(href='/neof')
+          span.icon
+            i.fas.fa-meteor
+          span.item Near Earth Object Finder
+      li
+        a(href='/sg')
+          span.icon
+            i.fas.fa-satellite-dish
+          span.item Satellite geofinder
+      li
+        a(href='/settings')
+          span.icon
+            i.fas.fa-cog
+          span.item Settings
+      li
+        .button
+          form(action="/logout?_method=DELETE"  method="POST")
+            button.btn.btn-def.btn-block(type='submit')
+              span.icon
+                i.fas.fa-power-off
+              span.item  Logout
+  .section
+    .top_navbar
+      .hamburger
+        a(href='#')
+          i.fas.fa-bars
+script.
+  var hamburger = document.querySelector(".hamburger");
+  hamburger.addEventListener("click", function(){
+  document.querySelector("body").classList.toggle("active");
+  })
+
+
+
+
+//Plans for tomorrow: create main page -> user setting pages, image of the day page, near eath objects page, satellite location page,  , sql database, delete/create user, and access to the api
+                   1hr                            api access and display on page 2-3hrs                                                     4hrs
+.content
+  h1#title
+  #content
+    script.
+        function contentLoader() {
+            sendApiRequest();
+        }
+
+        async function sendApiRequest() {
+            let APIKEY = 'rlCEAXjqD1MV3KemE089QpV6r6j5gBeorm8GSWB3';
+            let response = await fetch(`https://api.nasa.gov/planetary/apod?api_key=${APIKEY}`);
+            console.log(response);
+            let data = await response.json();
+            console.log(data);
+            useApiData(data);
+        };
+
+        function useApiData(data) {
+            document.querySelector("h1#title").innerHTML += data.title;
+            document.querySelector("#content").innerHTML += `img.main-img(src='${data.url}')`;
+            document.querySelector("#content").innerHTML += data.explanation;
+
+        }
+
+
+
