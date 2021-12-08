@@ -24,6 +24,8 @@ Once the server is running, you can navigate to [http://localhost:3000/](http://
 
 ### Jan Kobylarz
 
+Handled frontend, backend, sql queries, unit testing, and server side
+
 - [jkobyl4@uic.edu](jkobyl4@uic.edu)
 - [https://github.com/Jan3312](https://github.com/Jan3312)
 
